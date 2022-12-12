@@ -1,5 +1,7 @@
 /* Start Variables */
-
+  :root {
+    --main-color: #10CAB7; 
+  }          
 /* End Variables */
 /* Start Global Rules */
 
@@ -37,7 +39,7 @@ body {
 
 /* Start Header */
     .header {
-        padding: 20px;
+        padding: 1.25rem;
     }
     .container {
         display: flex;
@@ -45,7 +47,7 @@ body {
         align-items: center;
     }
     .header .logo {
-        width: 60px;
+        width: 3.75rem; 
     }
     .header .links {
         position: relative;
@@ -54,7 +56,7 @@ body {
         width: 100%;
     }
     .header .links .icon {
-        width: 30px;
+        width: 1.875rem; /* 30px */
         display: flex;
         flex-wrap: wrap;
         justify-content: flex-end; 
@@ -76,5 +78,67 @@ body {
         width: 100%;
         height: 2px;
     }
-    
+    .header .links ul {
+        list-style: none;
+        background-color: #f6f6f6;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        right: 0;
+        top: calc(100% + 0.9375rem); /* 15px */
+        min-width: 12.5rem; /* 200px */
+        display: none;
+    }
+    .header .links ul::before {
+        content: "";
+        border: 10px solid;
+        border-color: transparent transparent #f4f4f4 transparent;
+        position: absolute;
+        right: 5px;
+        top: -20px;
+    }
+    .header .links:hover ul {
+        display: block;
+    }
+    .header .links ul a {
+        display: block;
+        padding: 0.9375rem;
+        text-decoration: none;
+        color: #333;
+        transition: all 0.3s;
+    }
+    .header .links ul a:hover {
+        padding-left: 1.5625rem;
+    }
+    .header .links ul li:not(:last-child) a {
+        border: 1px solid #ddd;
+    } 
 /* End Header */
+/* Start Landing Section */
+    .landing {
+        background-image: url("../resources/images/landing.jpg");
+        background-size: cover;
+        height: calc(100vh - 4rem);
+        position: relative;
+    }
+    .landing .intro-text {
+       position: absolute;
+       top: 50%;
+       left: 50%;
+       text-align: center;
+       transform: translate(-50% -50%);
+       -webkit-transform: translate(-50%, -50%);
+       -moz-transform: translate(-50% -50%);
+       -ms-transform: translate(-50% -50%);
+       -o-transform: translate(-50% -50%);
+}
+    .landing .intro-text h1 {
+        margin: 0;
+        font-weight: bold;
+        font-size: 3.125rem; /* 50px */
+        color: var(--main-color);
+    }
+    .landing .intro-text p {
+        font-size: 1.1875rem;
+        line-height: 1.7;
+    }
